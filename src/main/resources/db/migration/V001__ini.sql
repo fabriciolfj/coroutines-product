@@ -1,0 +1,10 @@
+CREATE TABLE Product(
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uk_product_code UNIQUE (code)
+);
+
+CREATE INDEX idx_product_code ON Product(code);
